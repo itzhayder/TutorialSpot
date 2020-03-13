@@ -1,0 +1,36 @@
+.wrapper {
+  background-color: bisque;
+  padding: 25px;
+}
+
+.box {
+  display: flex;
+  padding: 25px;
+  align-items: stretch;
+}
+
+.box > div {
+  background-color: aqua;
+  flex: 1;
+}
+
+.box .item {
+  margin-left: 10px;
+}
+
+.box .item1 {
+  flex: 0 0 60px;
+  background: aqua;
+  margin-right: 30px;
+  text-align: center;
+  align-self: center;
+}
+
+
+
+/* Carousel */
+
+
+
+
+
