@@ -54,6 +54,7 @@
 
 footer {
     position: absolute;
+    bottom:0;
     width: 100%;
     text-align: center;
     background-color: rgb(86, 88, 95);
@@ -80,6 +81,9 @@ main,
 nav,
 section {
     display: block;
+}
+main{
+    height: 100vh;
 }
 
 body {
@@ -8697,7 +8701,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
-    padding-top: 1.5rem !important;
+    padding-top: 0rem !important;
 }
 
 .pr-4,
@@ -8707,7 +8711,7 @@ button.bg-dark:focus {
 
 .pb-4,
 .py-4 {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: 0rem !important;
 }
 
 .pl-4,
