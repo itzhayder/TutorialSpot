@@ -1,16 +1,15 @@
 .wrapper {
-  background-color: bisque;
+  /* background-color: bisque; */
   padding: 25px;
 }
 
 .box {
   display: flex;
   padding: 25px;
-  align-items: stretch;
 }
 
 .box > div {
-  background-color: aqua;
+  /* background-color: aqua; */
   flex: 1;
 }
 
@@ -18,13 +17,26 @@
   margin-left: 10px;
 }
 
-.box .item1 {
+.box .item-title {
   flex: 0 0 60px;
-  background: aqua;
-  margin-right: 30px;
-  text-align: center;
-  align-self: center;
+  background: rgb(55, 64, 182);
+  color: white;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
 }
+
+.box .item-title p {
+  margin: 0px;
+}
+
+.box .item-title:hover {
+  cursor: pointer;
+}
+
 
 
 
@@ -34,3 +46,23 @@
 
 
 
+/* Responsive  */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 5px;
+  }
+  .box {
+    flex-direction: column;
+  }
+  .box .item {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .box .item-title {
+    margin-right: 0px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    padding: 0px 10px;
+  }
+}
