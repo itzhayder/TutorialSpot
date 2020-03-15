@@ -21,12 +21,9 @@ Route::get('/admin', function () {
     return view('auth.login');
 });
 
-<<<<<<< HEAD
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-=======
->>>>>>> f3bb4084eaa224bba16efc2fa8bccf343dbfff04
 
 Route::get('/list', function () {
     return view('list');
