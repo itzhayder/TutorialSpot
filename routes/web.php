@@ -21,6 +21,7 @@ Route::get('/admin', function () {
     return view('auth.login');
 });
 
+<<<<<<< HEAD
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -30,6 +31,8 @@ Route::get('/playback', function () {
 });
 
 
+=======
+>>>>>>> 2605375ca3e4c20f8c5eba9bcdb55448cdf29336
 
 Route::get('/list', function () {
     return view('list');
