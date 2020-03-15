@@ -1,16 +1,13 @@
 .wrapper {
-  /* background-color: bisque; */
   padding: 25px;
 }
 
 .box {
   display: flex;
   padding: 25px;
-  background-color: tomato;
 }
 
 .box > div {
-  /* background-color: aqua; */
   flex: 1;
 }
 

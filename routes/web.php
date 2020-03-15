@@ -25,6 +25,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/playback', function () {
+    return view('playback');
+});
+
+
 Route::get('/list', function () {
     return view('list');
 });
