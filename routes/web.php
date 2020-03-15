@@ -17,17 +17,16 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/login', function() {
+Route::get('/admin', function () {
     return view('auth.login');
 });
 
-Route::get('/{title}', function () {
-    return view('moreVideos');
+
+Route::get('/list', function () {
+    return view('list');
 });
 
-Route::get('/{title}/{id}', function () {
-    return view('videos');
-});
+
 
 
 
