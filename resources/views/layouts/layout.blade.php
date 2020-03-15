@@ -21,6 +21,7 @@
 
     
     <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/playback.css">
   
     
 
@@ -39,10 +40,13 @@
             @yield('content')
         </main>
 
-        <footer>
-            Copyright 2020. TutorialSpot
-        </footer>
+        
     </div>
 
 </body>
+
+<!-- <footer>
+            Copyright 2020. TutorialSpot
+</footer> -->
+
 </html>

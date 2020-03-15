@@ -1,21 +1,38 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="wrapper">
-    <h4>Home page</h4>
+<div class="wrapper">   
 
     <div class="box">
-        <a href="#" class="item1">JS</a>
-        <div class="item"><iframe src="https://www.youtube.com/watch?v=mjDCMy3Xoso" frameborder="0"></iframe></div>
-        <div class="item"><iframe src="https://www.youtube.com/watch?v=mjDCMy3Xoso" frameborder="0"></iframe></div>
-        <div class="item"><iframe src="https://www.youtube.com/watch?v=mjDCMy3Xoso" frameborder="0"></iframe></div>
+        <a href="#" class="item-title">
+            <p>JS</p>
+            <p>></p>
+        </a>
+        <div class="embed-responsive embed-responsive-16by9 item">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>     
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 item">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 item">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
     </div>
 
     <div class="box">
-        <a href="#" class="item1">PHP</a>
-        <div class="item"><iframe src="https://www.youtube.com/watch?v=mjDCMy3Xoso" frameborder="0"></iframe></div>
-        <div class="item"><iframe src="https://www.youtube.com/watch?v=mjDCMy3Xoso" frameborder="0"></iframe></div>
-        <div class="item"><iframe src="https://www.youtube.com/watch?v=mjDCMy3Xoso" frameborder="0"></iframe></div>
+        <a href="#" class="item-title">
+            <p>PHP</p>
+            <p>></p>
+        </a>
+        <div class="embed-responsive embed-responsive-16by9 item">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 item">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 item">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
     </div>
     
 </div>
