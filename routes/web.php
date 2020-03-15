@@ -17,13 +17,10 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/{title}', function () {
-    return view('moreVideos');
+Route::get('/admin', function () {
+    return view('auth.login');
 });
 
-Route::get('/{title}/{id}', function () {
-    return view('videos');
-});
 
 
 
