@@ -21,10 +21,19 @@ Route::get('/admin', function () {
     return view('auth.login');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
 Route::get('/list', function () {
     return view('list');
 });
+
+Route::get('/videoList', function () {
+    return view('videoList');
+});
+
+
 
 
 
