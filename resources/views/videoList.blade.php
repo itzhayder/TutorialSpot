@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 
 @push('styles')
@@ -7,49 +8,20 @@
 @section('content')
 <div class="wrapper">
 
-    <h2>PHP Videos</h2>
+    <h2>{{ strtoupper($category) }} Videos</h2>
 
-    <div class="row">
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title by someone</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title build it</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            <h6>This is title</h6>
-        </div>
+    <div class="row">  
+        @foreach ($videos as $video)
+            @php
+                $url = explode("&list=", $video->url);
+                $url = str_replace("watch?v=", "embed/", $url[0]);  
+            @endphp
+
+            <div class="video-item">
+                <iframe src="{{ $url }}" allowfullscreen></iframe>
+                <h5>{{ $video->title }}</h5>
+            </div>
+        @endforeach
     </div>
 
 </div>

@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'VideoController@index')->name('video.index');
+
+Route::get('/playback', 'VideoController@show')->name('video.show');
 
 Route::get('/admin', function () {
     return view('auth.login');
@@ -24,11 +24,6 @@ Route::get('/admin', function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // });
-
-Route::get('/playback', function () {
-    return view('playback');
-});
-
 
 Route::get('/list', function () {
     return view('list');
@@ -42,3 +37,5 @@ Route::get('/videoList', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+Route::get('/{category}', 'VideoController@category')->name('video.category');
