@@ -108,7 +108,7 @@ input[type=text], select {
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 768px) {
    .dashboard-grid{
        display: block;
    }
