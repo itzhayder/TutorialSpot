@@ -34,6 +34,12 @@ Route::get('/list', function () {
     return view('list');
 });
 
+Route::get('/videoList', function () {
+    return view('videoList');
+});
+
+
+
 
 
 

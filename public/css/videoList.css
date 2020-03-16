@@ -1,0 +1,44 @@
+.wrapper {
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+iframe {
+  width: 100%;
+  height: 220px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.video-item {
+  width: 25%;
+  padding: 15px 10px;
+}
+
+
+
+/* ================================================ */
+/* Responsive  */
+/* ================================================ */
+
+/* for Mobile */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 15px;
+  }
+  .video-item {
+    width: 100%;
+  }
+}
+
+/* for Tab */
+@media (min-width: 768px) and (max-width: 959px){
+  .video-item {
+    width: 50%;
+  }
+
+}
