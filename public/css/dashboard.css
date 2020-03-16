@@ -41,7 +41,7 @@ button:focus{
 .sidebar{
     grid-area: sidebar;
     background-color: #6c757d;
-
+    height: 94.1vh;
 }
 
 .section{
