@@ -1,5 +1,4 @@
 .wrapper {
-  /* background-color: bisque; */
   padding: 25px;
 }
 
@@ -9,7 +8,6 @@
 }
 
 .box > div {
-  /* background-color: aqua; */
   flex: 1;
 }
 

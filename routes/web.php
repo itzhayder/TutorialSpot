@@ -30,10 +30,19 @@ Route::get('/playback', function () {
 });
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 156d1163d324d9896ebce06bfb53f452fe7e9ee1
 Route::get('/list', function () {
     return view('list');
 });
+
+Route::get('/videoList', function () {
+    return view('videoList');
+});
+
+
 
 
 

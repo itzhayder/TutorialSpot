@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@push('styles')
+    <link href="{{ asset('/css/homepage.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 <div class="wrapper">   
 

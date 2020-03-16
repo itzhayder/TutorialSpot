@@ -46,7 +46,9 @@
     box-sizing: border-box;
 }
 
+/* ============================================ */
 /* Custom CLASS */
+/* ============================================ */
 
 .bg-nav-c {
     background-color: #6c757d;
@@ -54,17 +56,32 @@
 
 footer{
     position: absolute;
-    bottom: 0;
     width: 100%;
     text-align: center;
     background-color: rgb(86, 88, 95);
     padding: 10px 0px;
+    bottom: 0;
+    /* margin-top: 60px; */
 }
 
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: green;
+}
+
+.space {
+    height: 43px;  /* to fix the footer at bottom */
+}
+
+
+/* ============================================ */
 /* END */
+/* ============================================ */
 
 html {
     font-family: sans-serif;
+    width: 100%;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -83,7 +100,7 @@ section {
     display: block;
 }
 main{
-    height: 100vh;
+    height: 100%;
 }
 
 body {
@@ -95,6 +112,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #f8fafc;
+    height: 100%;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {

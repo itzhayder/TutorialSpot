@@ -18,12 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    
-    <link rel="stylesheet" href="/css/homepage.css">
-    <link rel="stylesheet" href="/css/playback.css">
-  
-    
+    @stack('styles')
 
 </head>
 <body>
@@ -36,12 +31,18 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 
-        
+        <div class="space"></div>
+
+        <footer>
+            Copyright 2020. TutorialSpot
+        </footer>
     </div>
+
+    
 
 </body>
 
