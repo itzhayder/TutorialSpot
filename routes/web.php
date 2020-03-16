@@ -21,9 +21,9 @@ Route::get('/admin', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
 
 Route::get('/playback', function () {
     return view('playback');
@@ -37,11 +37,6 @@ Route::get('/list', function () {
 Route::get('/videoList', function () {
     return view('videoList');
 });
-
-
-
-
-
 
 
 Auth::routes();
