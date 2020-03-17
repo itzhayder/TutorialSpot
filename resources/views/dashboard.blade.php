@@ -2,55 +2,51 @@
 
 @section('content')
 
-  <div class="dashboard-grid">
+<div class="dashboard-grid">
     <img src="/images/next.svg" alt="" class="toggle-button show-mobile">
     <div class="sidebar hide">
         <ul class="list">
-            <li class="item">Add New</li>
-            <li class="item">English</li>
-            <li class="item">Bangla</li>
+            <li class="item"><a href="/dashboard/create">Add New</a></li>
             <li class="item">Category</li>
         </ul>
     </div>
 
     <div class="section">
-      <form action="" method = "">
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title">
+    <table>
+        <tr>
+            <th>Sl no.</th>
+            <th>Title</th>
+            <th>URL</th>
+            <th>Source Code</th>
+            <th>Language</th>
+            <th>Video Category</th>
+            <th>Sub Category</th>  
+        </tr>
+        
+        @if(count($videos) >1)
+            @foreach($videos as $video)
+            <tr>
+                <td>{{$video -> id}}</td>
+                <td>{{$video -> title}}</td>
+                <td>{{$video -> url}}</td>
+                <td>{{$video -> source_code}}</td>
+                <td>{{$video -> language}}</td>
+                <td>{{$video -> video_category}}</td>
+                <td>{{$video -> sub_category}}</td> 
 
-          <label for="url">URL Link</label>
-          <input type="text" id="url" name="url" >
+                <td><a href ="/dashboard/edit/{{$video->id}}"><img src="images/refresh.svg" alt="edit post"></a></td>
+                <td><a href ="/dashboard/{{$video->id}}"><img src="images/trash.svg" alt="delete post"></a></td>
 
-          <label for="language">Language</label>
-          <select id="language" name="language">
-            <option value="english">English</option>
-            <option value="bangla">Bangla</option>
-          </select>
+            </tr>
+            @endforeach
+        @else
+            <p>No videos uploaded yet!!!</p>
+        @endif
 
-          <label for="video">Video Category</label>
-          <select id="video" name="video">
-            <option value="javascript">Javascript</option>
-            <option value="php">PHP</option>
-            <option value="python">Python</option>
-          </select>
-
-          <label for="sub-category">Sub Category</label>
-          <select id="sub-category" name="sub-category">
-            <option value="basics">Basics</option>
-            <option value="framework">Framework</option>
-            <option value="programming">Programming</option>
-          </select>
-
-          <div class="button">
-            <input type="submit" value="Create Post">
-          </div>
-
-
-      </form>
+     
+    </table>
     </div>
 </div>
-
-
 
 @endsection
 
