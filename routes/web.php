@@ -35,6 +35,9 @@ Route::get('/videoList', function () {
 
 Route::get('/{category}', 'VideoController@category')->name('video.category');
 
+Route::get('/playback/{id}', 'VideoController@show')->name('video.show');
+
+
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
