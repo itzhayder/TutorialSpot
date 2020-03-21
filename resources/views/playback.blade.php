@@ -6,8 +6,12 @@
 
 	<div class="hero">
 		<div class="playback">
-			<iframe src="https://www.youtube.com/embed/HHcs3jXdKkQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<h4>*Video name*</h4>
+			@php
+                $url = explode("&list=", $video->url);
+                $url = str_replace("watch?v=", "embed/", $url[0]);  
+            @endphp
+			<iframe src="{{ $url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h4>{{$video->title}}</h4>
 		</div>
 
 		<div class="source-code">
@@ -34,20 +38,26 @@
 
     <div class="more-videos">
 		<h3>More Videos</h3>
-		<div class="video-image">
-			<div class="video">
-				<img src="/images/more.jpg" alt="">
+		@foreach ($videos as $video)
+
+			@php
+                $url = explode("&list=", $video->url);
+                $url = str_replace("watch?v=", "embed/", $url[0]);  
+            @endphp
+
+            <div class="video-image">
+                <iframe src="{{ $url }}"></iframe>
 				<p>Hello there</p>
-			</div>
-			<div class="video">
-				<img src="/images/more.jpg" alt="">
-				<p>Hello there</p>
-			</div>
-			<div class="video">
-				<img src="/images/more.jpg" alt="">
-				<p>Hello there</p>
-			</div>
-		</div>
+                <h5></h5>
+            </div>
+			<!-- <div class="video-image">
+				<div class="video">
+					<img src="/images/more.jpg" alt="">
+					
+				</div>
+			</div> -->
+        @endforeach
+
     </div>      		
 </div>
 
