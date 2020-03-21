@@ -33,7 +33,7 @@ Route::get('/videoList', function () {
     return view('videoList');
 });
 
-Route::get('/{category}', 'VideoController@category')->name('video.category');
+
 
 Route::get('/playback/{id}', 'VideoController@show')->name('video.show');
 
@@ -47,3 +47,4 @@ Route::get('/dashboard/edit/{id}', 'HomeController@edit')->name('dashboard.edit'
 Route::put('/dashboard/{id}', 'HomeController@update')->name('dashboard.update');
 Route::get('/dashboard/{id}', 'HomeController@destroy')->name('dashboard.destroy');
 
+Route::get('/{category}', 'VideoController@category')->name('video.category');
