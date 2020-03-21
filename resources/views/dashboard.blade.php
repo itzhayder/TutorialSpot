@@ -23,7 +23,7 @@
             <th>Sub Category</th>  
         </tr>
         
-        @if(count($videos) >1)
+        @if(count($videos) > 0 )
             @foreach($videos as $video)
             <tr>
                 <td>{{$video -> id}}</td>
