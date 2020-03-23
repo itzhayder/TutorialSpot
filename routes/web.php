@@ -43,6 +43,11 @@ Auth::routes();
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('/dashboard/create', 'HomeController@create')->name('dashboard.create');
 Route::post('/dashboard', 'HomeController@store')->name('dashboard.store');
+
+Route::get('/category/create', 'CategoryController@create');
+Route::post('/category', 'CategoryController@store');
+
+
 Route::get('/dashboard/edit/{id}', 'HomeController@edit')->name('dashboard.edit');
 Route::put('/dashboard/{id}', 'HomeController@update')->name('dashboard.update');
 Route::get('/dashboard/{id}', 'HomeController@destroy')->name('dashboard.destroy');
