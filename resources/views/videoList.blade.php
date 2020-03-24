@@ -14,12 +14,15 @@
         @foreach ($videos as $video)
             @php
                 $url = explode("&list=", $video->url);
-                $url = str_replace("watch?v=", "embed/", $url[0]);  
+                $url = str_replace("watch?v=", "embed/", $url[0]);
+                $youtubeVideoId = explode("embed/", $url)[1];
             @endphp
 
             <div class="video-item">
-                <iframe src="{{ $url }}" allowfullscreen></iframe>
-                <h5>{{ $video->title }}</h5>
+                <a href="{{ route('video.show', $video->id) }}" class="item">
+                    <img src="https://img.youtube.com/vi/{{ $youtubeVideoId }}/mqdefault.jpg" alt="{{ $video->title }}">
+                    <h4>{{ $video->title }}</h4>
+                 </a>
             </div>
         @endforeach
     </div>

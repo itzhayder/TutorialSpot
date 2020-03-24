@@ -31,7 +31,7 @@
                     $count++;
                 @endphp
                     <a href="{{ route('video.show', $v->id) }}" class="item">
-                        <img src="https://img.youtube.com/vi/{{ $youtubeVideoId }}/0.jpg" alt="{{ $v->title }}">
+                        <img src="https://img.youtube.com/vi/{{ $youtubeVideoId }}/mqdefault.jpg" alt="{{ $v->title }}">
                         <h4>{{ $v->title }}</h4>
                     </a>
             @endforeach

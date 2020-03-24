@@ -9,33 +9,28 @@ use App\Category;
 class VideoController extends Controller
 {
     public function index() {
-        $categories = Video::select('video_category')->distinct()->get();
-
-        //$categories = Category:: select('video_category')->get();
-        
-
-
+        $categories = Category::all();
         $videos = [];
-        
+
         foreach($categories as $category) {
-            $video = Video::where('video_category', $category->video_category)->get();
-            $arr = [
-                'type' => $category->video_category,
-                'videos' => $video
-            ];
-            array_push($videos, $arr);
-            // dd($videos[0]);
+            $video = Video::where('categories_id', $category->id)->orderBy('created_at', 'desc')->get();
+
+            if (count($video)) {
+                error_log($category->id);
+                $arr = [
+                    'type' => $category->video_category,
+                    'videos' => $video
+                ];
+                array_push($videos, $arr);
+            }
         }
 
-        return view('homepage', [
-            'category' => $categories,
-            'videos' => $videos
-        ]);
+        return view('homepage', [ 'videos' => $videos ]);
     }
 
     public function category($category) {
-
-        $videos = Video::where('video_category', $category)->get();
+        $categoryId = Category::where('video_category', $category)->get();
+        $videos = Video::where('categories_id', $categoryId[0]->id)->orderBy('created_at', 'desc')->get();
 
         if ($videos->isEmpty()) {
             abort(404);
@@ -46,7 +41,6 @@ class VideoController extends Controller
             'category' => $category]
         );
     }
-
 
     public function show($id)
     {
