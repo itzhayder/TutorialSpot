@@ -28,8 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $videos = Video:: all();
+        $categories = Category:: all();
         
-        return view('dashboard', ['videos' => $videos]);
+        return view('dashboard', ['videos' => $videos, 'categories' => $categories]);
     }
 
     public function create()

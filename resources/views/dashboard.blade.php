@@ -31,7 +31,8 @@
                 <td>{{$video -> url}}</td>
                 <td>{{$video -> source_code}}</td>
                 <td>{{$video -> language}}</td>
-                <td>{{$video -> video_category}}</td>
+                {{$id = $video -> categories_id}}
+                <td>{{$categories[$id - 1]->video_category}}</td>
                 <td>{{$video -> sub_category}}</td> 
 
                 <td><a href ="/dashboard/edit/{{$video->id}}"><img src="images/refresh.svg" alt="edit post"></a></td>
