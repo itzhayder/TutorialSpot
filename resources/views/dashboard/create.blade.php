@@ -31,10 +31,16 @@
 
           <label for="video-category">Video Category</label>
           <select id="video-category" name="video-category">
-            <option value="javascript">Javascript</option>
-            <option value="php">PHP</option>
-            <option value="python">Python</option>
+          @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category -> video_category}}</option>
+            <!-- <option value="php">PHP</option>
+            <option value="python">Python</option> -->
+          @endforeach
           </select>
+
+          <div class="button">
+            <a href="/category/create">Add a custom video category</a>
+          </div>
 
           <label for="sub-category">Sub Category</label>
           <select id="sub- category" name="sub-category">
@@ -49,6 +55,8 @@
 
 
       </form>
+
+ 
     </div>
 </div>
 

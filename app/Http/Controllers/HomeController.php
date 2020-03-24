@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 use App\Video;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -27,12 +28,14 @@ class HomeController extends Controller
     public function index()
     {
         $videos = Video:: all();
+        
         return view('dashboard', ['videos' => $videos]);
     }
 
     public function create()
     {
-        return view('dashboard.create');
+        $categories = Category:: all();
+        return view('dashboard.create',['categories' => $categories]);
     }
 
     public function store(Request $request)
@@ -55,7 +58,7 @@ class HomeController extends Controller
         $video->url = request('url');
         $video->source_code = request('source-code');
         $video->language = request('language');
-        $video->video_category = request('video-category');
+        $video->categories_id = request('video-category');
         $video->sub_category = request('sub-category');
 
         $video->save();
