@@ -17,14 +17,6 @@ Route::get('/', 'VideoController@index')->name('video.index');
 
 Route::get('/playback', 'VideoController@show')->name('video.show');
 
-Route::get('/admin', function () {
-    return view('auth.login');
-});
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// });
-
 Route::get('/list', function () {
     return view('list');
 });
@@ -33,10 +25,7 @@ Route::get('/videoList', function () {
     return view('videoList');
 });
 
-
-
 Route::get('/playback/{id}', 'VideoController@show')->name('video.show');
-
 
 Auth::routes();
 

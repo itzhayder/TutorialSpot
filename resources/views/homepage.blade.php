@@ -14,6 +14,7 @@
                     if (strcasecmp("javascript", $video['type']) == 0) {
                         $video['type'] = "JS";
                     }
+                    $count = 0;
                 @endphp
                 <p>{{ $video['type'] }}</p>
                 <p>more</p>
@@ -21,18 +22,23 @@
             <div class="item-wrapper">
             @foreach ($video['videos'] as $v)
                 @php
+                    if ($count == 4) {
+                        break;
+                    }
                     $url = explode("&list=", $v->url);
-                    $url = str_replace("watch?v=", "embed/", $url[0]);  
+                    $url = str_replace("watch?v=", "embed/", $url[0]);
+                    $youtubeVideoId = explode("embed/", $url)[1];
+                    $count++;
                 @endphp
-                
-                    <iframe class="item" src="{{ $url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                
+                    <a href="{{ route('video.show', $v->id) }}" class="item">
+                        <img src="https://img.youtube.com/vi/{{ $youtubeVideoId }}/0.jpg" alt="{{ $v->title }}">
+                        <h4>{{ $v->title }}</h4>
+                    </a>
             @endforeach
             </div>
         </div>
     @endforeach
 
 </div>
-
 
 @endsection
