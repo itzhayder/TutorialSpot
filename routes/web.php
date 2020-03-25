@@ -15,12 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'VideoController@index')->name('video.index');
 
-Route::get('/playback', 'VideoController@show')->name('video.show');
-
-Route::get('/list', function () {
-    return view('list');
-});
-
 Route::get('/videoList', function () {
     return view('videoList');
 });

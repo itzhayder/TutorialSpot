@@ -31,7 +31,11 @@
                 <td>{{$video -> url}}</td>
                 <td>{{$video -> source_code}}</td>
                 <td>{{$video -> language}}</td>
-                {{$id = $video -> categories_id}}
+
+                @php
+                    $id = $video -> categories_id;
+                @endphp
+               
                 <td>{{$categories[$id - 1]->video_category}}</td>
                 <td>{{$video -> sub_category}}</td> 
 

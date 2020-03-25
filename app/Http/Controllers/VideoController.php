@@ -42,11 +42,13 @@ class VideoController extends Controller
         );
     }
 
+    
+
     public function show($id)
     {
         $video = Video::findorFail($id);
-        $category = $video->video_category;
-        $videos = Video::where('video_category', $category)->get();
+        $category = $video->categories_id;
+        $videos = Video::where('categories_id', $category)->get();
         return view('playback', [
             'video' => $video,
             'videos' => $videos

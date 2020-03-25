@@ -11,9 +11,6 @@
     padding: 2%;
 }
 
-.playback{
-    
-}
 
 .source-head, .source-content, .more-videos{
     margin-top: 25px;
@@ -41,6 +38,8 @@
     text-align: justify;
 }
 
+
+
 .source-content p{
     color: white;
 }
@@ -50,6 +49,13 @@
     bottom: 8px;
     right: 8px;
     fill: white;
+}
+
+.clipboard{
+    position: absolute;
+    bottom: -10px;
+    right: 45px;  
+    display: none;
 }
 
 .video-image{
