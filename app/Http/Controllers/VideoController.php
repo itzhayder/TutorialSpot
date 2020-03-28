@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Video;
 use App\Category;
+use Illuminate\Support\Facades\Storage;
 
 class VideoController extends Controller
 {
@@ -53,5 +54,16 @@ class VideoController extends Controller
             'video' => $video,
             'videos' => $videos
         ]);
+    }
+
+    public function download($id){
+        $video = Video::findorFail($id);
+
+        $sub = str_replace("public/sourcecode/","",$video->source_code );
+
+        $title = $video->title;
+
+        //remember change the name of the download file name
+        return Storage::download($video->source_code, 'code.txt');
     }
 }

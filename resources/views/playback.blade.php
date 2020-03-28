@@ -17,11 +17,21 @@
 		<div class="source-code">
 			<div class="source-head">
 				<h3>Source Code</h3>
-				<img class="source-imgs" src="/images/download.svg" alt="">
+				<a href ="/playback/{{$video->id}}/download"><img class="source-imgs" src="/images/download.svg" alt=""></a>
 			</div>
 
+		
+
 			<div class="source-content">
-				<p> {{$video -> source_code}}</p>
+				<p>
+					@php
+						$sub = str_replace("public/sourcecode/","",$video->source_code );
+						$myfile = fopen("storage/sourcecode/$sub", "r") or die("Unable to open file!");
+						$content =  fread($myfile,2048);
+						echo nl2br($content);
+						fclose($myfile);
+					@endphp
+				</p>
 				<p class="clipboard">Copied!</p>
 				<img class="source-imgs" src="/images/copy.png" alt="" 
 				onclick="copyToClipboard('{{$video -> source_code}}')"> 

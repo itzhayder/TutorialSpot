@@ -12,7 +12,7 @@
     </div>
 
     <div class="section">
-      <form action="{{ route('dashboard.store') }}" method = "POST">
+      <form action="{{ route('dashboard.store') }}" method = "POST" enctype="multipart/form-data">
           @csrf
           <label for="title">Title</label>
           <input type="text" id="title" name="title">
@@ -21,7 +21,7 @@
           <input type="text" id="url" name="url" >
 
           <label for="source-code">Source Code</label>
-          <input type="text" id="source-code" name="source-code" >
+          <input type="file" name="source-code" id="source-code">
 
           <label for="language">Language</label>
           <select id="language" name="language">

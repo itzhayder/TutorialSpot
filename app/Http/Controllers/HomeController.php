@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Video;
 use App\Category;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -50,6 +51,8 @@ class HomeController extends Controller
             'source-code' => 'required',
 
         ]);
+
+        $path = Storage::putFile('public/sourcecode', $request->file('source-code'));
         
  
         //Create video
@@ -57,7 +60,7 @@ class HomeController extends Controller
 
         $video->title = request('title');
         $video->url = request('url');
-        $video->source_code = request('source-code');
+        $video->source_code = $path;
         $video->language = request('language');
         $video->categories_id = request('video-category');
         $video->sub_category = request('sub-category');
@@ -70,30 +73,59 @@ class HomeController extends Controller
     public function edit($id)
     {
         $video = Video::findorFail($id);
-        return view('dashboard.edit', ['video' => $video]);
+        $categories = Category:: all();
+        return view('dashboard.edit', ['video' => $video, 'categories' => $categories]);
     }
+
     public function update(Request $request, $id)
     {
-        
+
         //Validate input form
 
         $this->validate($request, [
             'title' => 'required',
-            'url' => 'required',
-            'source-code' => 'required',
-
+            'url' => 'required'
         ]);
 
         $video = Video::findorFail($id);
 
+
+        //Deleting file from storage
+        //$sub = str_replace("public/sourcecode/","",$video->source_code );
+
+        
+        error_log($video->source_code);
+        error_log(request('source-code'));
+        
+        $myFile = $request->file('source-code');
+            error_log($myFile);
+        
+
         $video->title = request('title');
         $video->url = request('url');
-        $video->source_code = request('source-code');
+
+        if(request('source-code') != ""){ 
+
+            // Storage::delete($sub);
+            // unlink(storage_path('app/public/sourcecode/'.$sub));
+            // error_log('deleted ');
+
+            $path = $request->file('source-code')->store('public/sourcecode');
+            
+            // $path = Storage::putFile('public/sourcecode', $myFile);
+            error_log($path);
+            $video->source_code = $path;
+
+            
+        }
+
         $video->language = request('language');
-        $video->video_category = request('video-category');
+        $video->categories_id = request('video-category');
         $video->sub_category = request('sub-category');
 
         $video->save();
+
+      
 
         return redirect('/dashboard');
     }
@@ -103,6 +135,12 @@ class HomeController extends Controller
     {
         $video = Video::findorFail($id);
         $video -> delete();
+        $sub = str_replace("public/sourcecode/","",$video->source_code );
+
+        // 1. possibility
+        Storage::delete($sub);
+        // 2. possibility
+        unlink(storage_path('app/public/sourcecode/'.$sub));
 
         return redirect('/dashboard');
     }

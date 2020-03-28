@@ -20,6 +20,7 @@ Route::get('/videoList', function () {
 });
 
 Route::get('/playback/{id}', 'VideoController@show')->name('video.show');
+Route::get('/playback/{id}/download', 'VideoController@download')->name('video.download');
 
 Auth::routes();
 

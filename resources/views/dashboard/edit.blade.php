@@ -26,7 +26,7 @@
           <input type="text" id="url" name="url" value="{{$video->url}}">
 
           <label for="source-code">Source Code</label>
-          <input type="text" id="source-code" name="source-code" value="{{$video->source_code}}" >
+          <input type="file" name="source-code" id="source-code" value="{{$video->source_code}}">
 
           <label for="language">Language</label>
           <select id="language" name="language" value="{{$video->language}}">
@@ -35,14 +35,14 @@
           </select>
 
           <label for="video-category">Video Category</label>
-          <select id="video-category" name="video-category" value="{{$video->video_category}}">
-            <option value="javascript">Javascript</option>
-            <option value="php">PHP</option>
-            <option value="python">Python</option>
+          <select id="video-category" name="video-category">
+          @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category -> video_category}}</option>
+          @endforeach
           </select>
 
           <label for="sub-category">Sub Category</label>
-          <select id="sub- category" name="sub-category" value="{{$video->sub_category}}">
+          <select id="sub- category" name="sub-category">
             <option value="basics">Basics</option>
             <option value="framework">Framework</option>
             <option value="programming">Programming</option>
