@@ -91,30 +91,17 @@ class HomeController extends Controller
 
 
         //Deleting file from storage
-        //$sub = str_replace("public/sourcecode/","",$video->source_code );
-
-        
-        error_log($video->source_code);
-        error_log(request('source-code'));
-        
-        $myFile = $request->file('source-code');
-            error_log($myFile);
-        
+        $sub = str_replace("public/sourcecode/","",$video->source_code );
 
         $video->title = request('title');
         $video->url = request('url');
 
         if(request('source-code') != ""){ 
-
-            // Storage::delete($sub);
-            // unlink(storage_path('app/public/sourcecode/'.$sub));
-            // error_log('deleted ');
-
             $path = $request->file('source-code')->store('public/sourcecode');
-            
-            // $path = Storage::putFile('public/sourcecode', $myFile);
-            error_log($path);
             $video->source_code = $path;
+
+            Storage::delete($sub);
+            unlink(storage_path('app/public/sourcecode/'.$sub));
 
             
         }
