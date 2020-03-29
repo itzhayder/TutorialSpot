@@ -34,7 +34,7 @@
 				</p>
 				<p class="clipboard">Copied!</p>
 				<img class="source-imgs" src="/images/copy.png" alt="" 
-				onclick="copyToClipboard('{{$video -> source_code}}')"> 
+				onclick="copyToClipboard({{$content}})"> 
 			</div>
 		</div>  
 	</div>
