@@ -61,9 +61,7 @@ class VideoController extends Controller
 
         $sub = str_replace("public/sourcecode/","",$video->source_code );
 
-        $title = $video->title;
-
-        //remember change the name of the download file name
-        return Storage::download($video->source_code, 'code.txt');
+        $title = "$video->title" . ".txt";
+        return Storage::download($video->source_code, $title);
     }
 }

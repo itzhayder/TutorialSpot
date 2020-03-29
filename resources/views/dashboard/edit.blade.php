@@ -16,7 +16,7 @@
      <h1>EDIT</h1>
 
     <div class="section">
-      <form action="{{ route('dashboard.update', $video->id) }}" method = "POST">
+      <form action="{{ route('dashboard.update', $video->id) }}" method = "POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           <label for="title">Title</label>

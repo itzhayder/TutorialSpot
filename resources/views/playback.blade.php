@@ -33,8 +33,11 @@
 					@endphp
 				</p>
 				<p class="clipboard">Copied!</p>
+
+				<!-- doesnt work when the length of the content is big..only works for short sentences  -->
+				
 				<img class="source-imgs" src="/images/copy.png" alt="" 
-				onclick="copyToClipboard({{$content}})"> 
+				onclick="copyToClipboard('{{$content}}')"> 
 			</div>
 		</div>  
 	</div>
@@ -67,10 +70,10 @@
 
 <script>
 	  function copyToClipboard(copyText) {
-
-	    //Amazing stuff
+  		
+		//Amazing stuff
 		var dummyContent = copyText;
-		var dummy = $('<input>').val(dummyContent).appendTo('body').select()
+		var dummy = $('<input>').val(dummyContent).appendTo('body').select();
 		document.execCommand('copy');
 
 		document.querySelector(".clipboard").style.display = "block";
