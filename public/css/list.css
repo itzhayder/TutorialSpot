@@ -16,3 +16,11 @@ table {
 img{
     width:25px;
 }
+
+.success {
+	border-color: #2ecc71;
+}
+
+.error {
+	color: #e74c3c;
+}

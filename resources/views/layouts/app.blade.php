@@ -7,10 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>TutorialSpot</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- main.js -->
+    <!-- <script src="{{ asset('js/main.js') }}" defer></script> -->
     <script src="/js/dashboard.js" defer></script>
 
     <!-- Fonts -->

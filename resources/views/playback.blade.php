@@ -23,21 +23,20 @@
 		
 
 			<div class="source-content">
-				<p>
 					@php
 						$sub = str_replace("public/sourcecode/","",$video->source_code );
 						$myfile = fopen("storage/sourcecode/$sub", "r") or die("Unable to open file!");
 						$content =  fread($myfile,2048);
-						echo nl2br($content);
+						// echo nl2br($content);
 						fclose($myfile);
 					@endphp
-				</p>
+				<pre id="foo" value="{{$content}}">{{$content}}</pre> 
 				<p class="clipboard">Copied!</p>
 
-				<!-- doesnt work when the length of the content is big..only works for short sentences  -->
+				<button class='btn' data-clipboard-target="#foo">
+						<img src="/images/copy.png" alt="Copy to clipboard">
+				</button>
 				
-				<img class="source-imgs" src="/images/copy.png" alt="" 
-				onclick="copyToClipboard('{{$content}}')"> 
 			</div>
 		</div>  
 	</div>
@@ -68,27 +67,7 @@
     </div>      		
 </div>
 
-<script>
-	  function copyToClipboard(copyText) {
-  		
-		//Amazing stuff
-		var dummyContent = copyText;
-		var dummy = $('<input>').val(dummyContent).appendTo('body').select();
-		document.execCommand('copy');
 
-		document.querySelector(".clipboard").style.display = "block";
-
-		setTimeout(function() {
-			document.querySelector(".clipboard").style.display = "none";
-        },2000);
-
-		
-	}
-
-
-	
-
-</script>
 
 
 

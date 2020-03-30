@@ -4,7 +4,7 @@ const sidebar = document.querySelector('.sidebar');
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('hide');
     toggleButton.classList.toggle('rotate');
- 
+
 })
 
 

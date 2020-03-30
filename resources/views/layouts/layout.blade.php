@@ -11,7 +11,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="jquery-3.4.1.min.js"></script>
+    <!-- <script src="jquery-3.4.1.min.js"></script> -->
+    <!-- Clipboard.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -42,6 +45,21 @@
             Copyright 2020. TutorialSpot
         </footer>
     </div>
+    
+    <script>
+        var clipboard = new ClipboardJS('.btn');
+
+        clipboard.on('success', function(e) {
+            e.clearSelection();
+
+            document.querySelector(".clipboard").style.display = "block";
+		    setTimeout(function() {
+			    document.querySelector(".clipboard").style.display = "none";
+            },2000);
+        });
+
+        
+    </script>
 
 </body>
 

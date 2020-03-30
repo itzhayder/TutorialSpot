@@ -12,7 +12,7 @@
     </div>
 
     <div class="section">
-      <form action="{{ route('dashboard.store') }}" method = "POST" enctype="multipart/form-data">
+      <form action="{{ route('dashboard.store') }}" method = "POST" enctype="multipart/form-data" id="form">
           @csrf
           <label for="title">Title</label>
           <input type="text" id="title" name="title">
@@ -43,14 +43,14 @@
           </div>
 
           <label for="sub-category">Sub Category</label>
-          <select id="sub- category" name="sub-category">
+          <select id="sub-category" name="sub-category">
             <option value="basics">Basics</option>
             <option value="framework">Framework</option>
             <option value="programming">Programming</option>
           </select>
 
           <div class="button">
-            <input type="submit" value="Create Post">
+            <input id="submit" type="submit" value="Create Post">
           </div>
 
 

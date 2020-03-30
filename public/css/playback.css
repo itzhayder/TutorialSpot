@@ -40,15 +40,21 @@
 
 
 
-.source-content p{
+.source-content pre{
     color: white;
+    font-size: 20px;
 }
 
-.source-content img{
+.source-content .btn{
     position: absolute;
-    bottom: 8px;
+    bottom: 15px;
     right: 8px;
-    fill: white;
+}
+
+.source-content img {
+    position: absolute;
+    width: 20px;
+    transform: translate(-50%, -50%);
 }
 
 .clipboard{
@@ -56,6 +62,7 @@
     bottom: -10px;
     right: 45px;  
     display: none;
+    color: white;
 }
 
 .video-image{

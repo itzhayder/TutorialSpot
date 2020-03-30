@@ -49,7 +49,6 @@ class HomeController extends Controller
             'title' => 'required',
             'url' => 'required',
             'source-code' => 'required',
-
         ]);
 
         $path = Storage::putFile('public/sourcecode', $request->file('source-code'));
